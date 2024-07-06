@@ -1,0 +1,61 @@
+.billing {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.billing h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.billing-summary {
+    margin-bottom: 20px;
+}
+
+.billing-summary h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.billing-summary ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.billing-summary ul li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.billing-summary h3:last-child {
+    margin-top: 10px;
+}
+
+.payment-methods {
+    margin-top: 20px;
+}
+
+.payment-methods label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.payment-methods input[type="radio"] {
+    margin-right: 10px;
+}
+
+.payment-methods button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-methods button:hover {
+    background-color: #0056b3;
+}
