@@ -1,0 +1,61 @@
+/* Home.css */
+body {
+    scroll-behavior: smooth;
+  }
+  
+  .navbar {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  #navlook {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  #redirectpages ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  #redirectpages li {
+    margin: 0 15px;
+  }
+  
+  #redirectpages a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+  }
+  
+  #redirectpages a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .section {
+    padding: 60px 20px;
+    height: 100vh; /* Full screen height */
+  }
+  
+  #home {
+    background-color: #f4f4f4;
+  }
+  
+  #features {
+    background-color: #e2e2e2;
+  }
+  
+  #about {
+    background-color: #ccc;
+  }
+  
+  #contact {
+    background-color: #aaa;
+  }
+  

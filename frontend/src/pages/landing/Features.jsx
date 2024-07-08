@@ -1,10 +1,15 @@
 import React from 'react';
+import Home from './Home';
+
 
 const Features = () => {
   return (
-    <section id="features">
-      <h1>Features Section</h1>
-    </section>
+    <>
+      <Home />
+      <section id="features">
+        <h1>Features Section</h1>
+      </section>
+    </>
   );
 };
 

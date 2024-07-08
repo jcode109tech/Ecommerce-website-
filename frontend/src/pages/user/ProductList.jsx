@@ -1,4 +1,6 @@
 import React from 'react';
+import NavbarUser from '../NavbarUser';
+
 
 const ProductList = ({ products, categories }) => {
 
@@ -8,15 +10,18 @@ const ProductList = ({ products, categories }) => {
     }
 
     return (
-        <div className="product-list">
-            {products.map(product => (
-                <div key={product._id} className="product-item">
-                    <h3>{product.title}</h3>
-                    <p>{product.description}</p>
-                    <p>Category: {categories.find(cat => cat._id === product.categoryId)?.title}</p>
-                </div>
-            ))}
-        </div>
+        <>
+            <NavbarUser />
+            <div className="product-list">
+                {products.map(product => (
+                    <div key={product._id} className="product-item">
+                        <h3>{product.title}</h3>
+                        <p>{product.description}</p>
+                        <p>Category: {categories.find(cat => cat._id === product.categoryId)?.title}</p>
+                    </div>
+                ))}
+            </div>
+        </>
     );
 };
 

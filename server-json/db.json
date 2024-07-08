@@ -1,53 +1,44 @@
 {
-
-  "users": [
-    {
-        "id": 1,
-        "email": "user1@example.com",
-        "password": "password1"
-      },
-      {
-        "id": 2,
-        "email": "user2@example.com",
-        "password": "password2"
-      }
-  ],
-  
   "categories": [
     {
       "_id": {
         "$oid": "64aaf573cf1a5e4bd9f77a0b"
       },
       "name": "Electronics",
-      "description": "Devices and gadgets"
+      "description": "Devices and gadgets",
+      "id": "8422"
     },
     {
       "_id": {
         "$oid": "64aaf573cf1a5e4bd9f77a0c"
       },
       "name": "Books",
-      "description": "Books of all genres"
+      "description": "Books of all genres",
+      "id": "ce3a"
     },
     {
       "_id": {
         "$oid": "64aaf573cf1a5e4bd9f77a0d"
       },
       "name": "Clothing",
-      "description": "Men's and Women's Apparel"
+      "description": "Men's and Women's Apparel",
+      "id": "5c84"
     },
     {
       "_id": {
         "$oid": "64aaf573cf1a5e4bd9f77a0e"
       },
       "name": "Home Appliances",
-      "description": "Appliances for home use"
+      "description": "Appliances for home use",
+      "id": "9a8d"
     },
     {
       "_id": {
         "$oid": "64aaf573cf1a5e4bd9f77a0f"
       },
       "name": "Toys",
-      "description": "Toys for kids of all ages"
+      "description": "Toys for kids of all ages",
+      "id": "0514"
     }
   ],
   "products": [
@@ -60,7 +51,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0b"
       },
-      "imgUrl": "https://example.com/smartphone.jpg"
+      "imgUrl": "https://example.com/smartphone.jpg",
+      "id": "b318"
     },
     {
       "title": "Laptop",
@@ -71,7 +63,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0b"
       },
-      "imgUrl": "https://example.com/laptop.jpg"
+      "imgUrl": "https://example.com/laptop.jpg",
+      "id": "0146"
     },
     {
       "title": "Headphones",
@@ -82,7 +75,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0b"
       },
-      "imgUrl": "https://example.com/headphones.jpg"
+      "imgUrl": "https://example.com/headphones.jpg",
+      "id": "d49a"
     },
     {
       "title": "Fiction Novel",
@@ -93,7 +87,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0c"
       },
-      "imgUrl": "https://example.com/fiction_novel.jpg"
+      "imgUrl": "https://example.com/fiction_novel.jpg",
+      "id": "6022"
     },
     {
       "title": "Non-Fiction Book",
@@ -104,7 +99,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0c"
       },
-      "imgUrl": "https://example.com/nonfiction_book.jpg"
+      "imgUrl": "https://example.com/nonfiction_book.jpg",
+      "id": "2c95"
     },
     {
       "title": "Biography",
@@ -115,7 +111,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0c"
       },
-      "imgUrl": "https://example.com/biography.jpg"
+      "imgUrl": "https://example.com/biography.jpg",
+      "id": "ddce"
     },
     {
       "title": "T-shirt",
@@ -126,7 +123,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0d"
       },
-      "imgUrl": "https://example.com/tshirt.jpg"
+      "imgUrl": "https://example.com/tshirt.jpg",
+      "id": "50fa"
     },
     {
       "title": "Jeans",
@@ -137,7 +135,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0d"
       },
-      "imgUrl": "https://example.com/jeans.jpg"
+      "imgUrl": "https://example.com/jeans.jpg",
+      "id": "5dab"
     },
     {
       "title": "Jacket",
@@ -148,7 +147,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0d"
       },
-      "imgUrl": "https://example.com/jacket.jpg"
+      "imgUrl": "https://example.com/jacket.jpg",
+      "id": "75b9"
     },
     {
       "title": "Blender",
@@ -159,7 +159,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0e"
       },
-      "imgUrl": "https://example.com/blender.jpg"
+      "imgUrl": "https://example.com/blender.jpg",
+      "id": "bd6f"
     },
     {
       "title": "Microwave Oven",
@@ -170,7 +171,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0e"
       },
-      "imgUrl": "https://example.com/microwave_oven.jpg"
+      "imgUrl": "https://example.com/microwave_oven.jpg",
+      "id": "20f5"
     },
     {
       "title": "Coffee Maker",
@@ -181,7 +183,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0e"
       },
-      "imgUrl": "https://example.com/coffee_maker.jpg"
+      "imgUrl": "https://example.com/coffee_maker.jpg",
+      "id": "f44c"
     },
     {
       "title": "Action Figure",
@@ -192,7 +195,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0f"
       },
-      "imgUrl": "https://example.com/action_figure.jpg"
+      "imgUrl": "https://example.com/action_figure.jpg",
+      "id": "36ee"
     },
     {
       "title": "Puzzle",
@@ -203,7 +207,8 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0f"
       },
-      "imgUrl": "https://example.com/puzzle.jpg"
+      "imgUrl": "https://example.com/puzzle.jpg",
+      "id": "e731"
     },
     {
       "title": "Board Game",
@@ -214,28 +219,43 @@
       "categoryId": {
         "$oid": "64aaf573cf1a5e4bd9f77a0f"
       },
-      "imgUrl": "https://example.com/board_game.jpg"
+      "imgUrl": "https://example.com/board_game.jpg",
+      "id": "da15"
     }
   ],
   "cart": [
-
     {
       "_id": "1",
       "title": "Product 1",
       "imgUrl": "https://via.placeholder.com/150",
-      "price": 19.99
+      "price": 19.99,
+      "id": "554b"
     },
     {
       "_id": "2",
       "title": "Product 2",
       "imgUrl": "https://via.placeholder.com/150",
-      "price": 29.99
+      "price": 29.99,
+      "id": "28d5"
     },
     {
       "_id": "3",
       "title": "Product 3",
       "imgUrl": "https://via.placeholder.com/150",
-      "price": 14.99
+      "price": 14.99,
+      "id": "f00b"
     }
-    ]
+  ],
+  "users": [
+    {
+      "id": "4d43",
+      "name": "Alex",
+      "email": "Alex@gmail.com",
+      "password": "1234",
+      "role": "customer"
+    }
+  ],
+  "login": [
+
+  ]
 }
