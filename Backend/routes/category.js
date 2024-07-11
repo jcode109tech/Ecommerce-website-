@@ -3,10 +3,10 @@ const { createCategory, findAllCategory, getOneCategory, categoryUpdate, categor
 const validate = require('../middleware/validator.midlleware')
 const { categorySchema } = require('../joischema/categoryValidator')
 
-router.post('/createcategory', validate(categorySchema), createCategory);
-router.get('/categories', findAllCategory);
+router.post('/create', validate(categorySchema), createCategory);
+router.get('/', findAllCategory);
 router.get('/categories/:id', getOneCategory);
-router.post('/updatecategory/:id', validate(categorySchema), categoryUpdate);
-router.get('/deletecategory/:id', categoryDelete);
+router.post('/update/:id', validate(categorySchema), categoryUpdate);
+router.get('/delete/:id', categoryDelete);
 
 module.exports = router;

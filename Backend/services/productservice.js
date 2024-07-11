@@ -22,7 +22,7 @@ class ProductService {
 
     async findOneProduct(id) {
         try {
-            const oneProduct = await productModel.findOne({ _id: id });
+            const oneProduct = await productModel.findOne({ _id: id }).populate('categoryId');
             return oneProduct;
         } catch (err) {
             throw new Error(`Error finding product: ${err.message}`);
@@ -31,7 +31,7 @@ class ProductService {
 
     async updateProduct (id, productInfo) {
         try {
-            const updated = await productModel.findOneAndUpdate({ _id: id}, productInfo, { new: true });
+            const updated = await productModel.findOneAndUpdate({ _id: id}, productInfo, { new: true }).populate('categoryId');
             return updated;
         } catch (err) {
             throw new Error(`Error updating product: ${err.message}`);
@@ -40,7 +40,7 @@ class ProductService {
 
     async deleteProduct (id) {
         try {
-            const deleted = await productModel.findOneAndDelete({ _id: id });
+            const deleted = await productModel.findOneAndDelete({ _id: id }).populate('categoryId');
             return deleted;
         } catch (err) {
             throw new Error(`Error deleting product: ${err.message}`);
