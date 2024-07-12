@@ -3,15 +3,16 @@ import { NavLink } from 'react-router-dom';
 import Logo from './landing/Logo';
 import SearchProducts from './user/SearchProducts';
 import '../style/Navbar.css';
-import { useData } from '../Context';
+// import { useData } from '../Context';
 
 const NavbarUser = () => {
-    const { categories, products } = useData();
+    // const { categories, products } = useData();
 
     const userLinks = (
         <div>
             <ul>
-                <SearchProducts />
+                {/* <SearchProducts /> */}
+                <li><NavLink to="/">Categories</NavLink></li>
                 <li><NavLink to="/products">Products</NavLink></li>
                 <li><NavLink to="/cart">Cart</NavLink></li>
                 <li><NavLink to="/billing">Billing</NavLink></li>

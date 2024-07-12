@@ -41,7 +41,7 @@ const SearchProducts = () => {
                 </select>
                 <input 
                     type="text" 
-                    placeholder="Search products..." 
+                    placeholder="Search categories..." 
                     value={searchTerm} 
                     onChange={handleInputChange} 
                 />

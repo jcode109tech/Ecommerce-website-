@@ -4,6 +4,14 @@ const categoryRoute =  require('./category');
 const productRoute = require('./product');
 const authRoute = require('./auth');
 const userRoute = require('./user')
+const cors = require('cors');
+
+router.use(
+    cors({
+        credentials: true,
+        origin: 'http://localhost:3000'
+    })
+)
 
 router.use('/api/categories', categoryRoute );
 router.use('/api/products', productRoute);

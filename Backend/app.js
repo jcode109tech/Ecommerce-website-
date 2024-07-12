@@ -4,6 +4,8 @@ const configVariables = require('./config/config')
 const cloudinary = require('cloudinary')
 const routehandler = require('./routes');
 
+const cors = require('cors');
+
 const app = express();
 
 cloudinary.config({
@@ -15,6 +17,7 @@ cloudinary.config({
 
 mongooseDBConnection();
 
+app.use(cors());
 app.use(express.json())
 app.use('/', routehandler );
 
