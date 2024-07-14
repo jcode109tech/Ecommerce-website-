@@ -1,0 +1,160 @@
+/* navbar.css */
+/* .head {
+    background-color: blanchedalmond;
+}
+
+.looknav {
+    background-color: #ffffff;
+}
+.navbar {
+    background-color: #0a0607;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navlook {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#redirectpages {
+    justify-content: flex-start;
+    
+}
+#redirectpages ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+#redirectpages ul li {
+    font-size: 18px;
+}
+
+.product-list {
+    margin-top: 20px;
+}
+
+.product-item {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.product-item h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.product-item p {
+    margin-bottom: 5px;
+    color: #666666;
+}
+
+.login-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+} */
+
+/* Navbar.css */
+
+.head {
+    background-color: blanchedalmond;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.looknav {
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #0a0607;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navlook {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#redirectpages {
+    display: flex;
+    justify-content: center; /* Center-align the items */
+    flex-grow: 1;
+}
+
+#redirectpages ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px; /* Increase the gap between items */
+    margin: 0;
+    padding: 0;
+}
+
+#redirectpages ul li {
+    font-size: 18px;
+    color: white;
+}
+
+#redirectpages ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#redirectpages ul li a:hover {
+    text-decoration: underline;
+}
+
+.product-list {
+    margin-top: 20px;
+}
+
+.product-item {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.product-item h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.product-item p {
+    margin-bottom: 5px;
+    color: #666666;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}

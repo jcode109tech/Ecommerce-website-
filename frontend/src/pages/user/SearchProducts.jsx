@@ -4,7 +4,7 @@ import { useData } from '../../Context';
 const SearchProducts = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
-    const { categories, setProducts, api } = useData();
+    const { api } = useData();
 
     const handleCategoryChange = (e) => {
         setSelectedCategory(e.target.value);
@@ -21,7 +21,7 @@ const SearchProducts = () => {
 
         const response = await fetch(`${api}/products/search?${query.join('&')}`);
         const data = await response.json();
-        setProducts(data);
+        // setProducts(data);
     };
 
     useEffect(() => {
@@ -33,11 +33,11 @@ const SearchProducts = () => {
             <div className="search-bar">
                 <select onChange={handleCategoryChange} value={selectedCategory}>
                     <option value="">All</option>
-                    {categories.map((category) => (
+                    {/* {categories.map((category) => (
                         <option key={category._id} value={category._id}>
                             {category.name}
                         </option>
-                    ))}
+                    ))} */}
                 </select>
                 <input 
                     type="text" 

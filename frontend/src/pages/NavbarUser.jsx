@@ -1,29 +1,36 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from './landing/Logo';
 import SearchProducts from './user/SearchProducts';
-import '../style/Navbar.css';
-// import { useData } from '../Context';
+import '../styles/Navbar.css';
+import { useData } from '../Context';
 
 const NavbarUser = () => {
-    // const { categories, products } = useData();
+
+    const { logout } = useData();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    };
 
     const userLinks = (
         <div>
             <ul>
-                {/* <SearchProducts /> */}
-                <li><NavLink to="/">Categories</NavLink></li>
+                <SearchProducts />
+                <li><NavLink to="/categories">Categories</NavLink></li>
                 <li><NavLink to="/products">Products</NavLink></li>
                 <li><NavLink to="/cart">Cart</NavLink></li>
                 <li><NavLink to="/billing">Billing</NavLink></li>
-                <li><NavLink to="/login">Logout</NavLink></li>
-                <li><NavLink to="/settings">Settings</NavLink></li>
+                <li><NavLink to="/admin">Admin</NavLink></li>
+                <li><button className="login-button" onClick={handleLogout}>Log Out</button></li>
             </ul>
         </div>
     );
 
     return (
-        <header>
+        <header className='head'>
             <nav className="navbar">
                 <div id="navlook">
                     <Logo />
@@ -37,4 +44,3 @@ const NavbarUser = () => {
 }
 
 export default NavbarUser;
-

@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Products from './pages/user/Products';
+
 import ProductCreate from './components/ProductCreate';
 import ProductUpdate from './components/ProductUpdate';
 import ProductDelete from './components/ProductDelete';
 
-import Categorys from './pages/user/Categorys';
 import CategoryCreate from './components/CategoryCreate';
 import CategoryUpdate from './components/CategoryUpdate';
 import CategoryDelete from './components/CategoryDelete' 
@@ -15,74 +14,71 @@ import CategoryDelete from './components/CategoryDelete'
 import NotFoundPage from './pages/NotFoundPage';
 
 import Home from './pages/landing/Home';
-import LoginForm from './new/LoginForm';
-import RegisterForm from './new/RegisterForm';
+import Authform from './auth/Authform';
 
-import CategoryList from './components/CategoryList';
-import ProductList from './components/ProductList';
+
+import CategoryList from './pages/user/CategoryList';
+import ProductList from './pages/user/ProductList';
 import HomeUser from './pages/user/HomeUser';
+import Cart from './pages/user/Cart';
+import Billing from './pages/user/Billing';
 
-// import ProtectedRoute from './new/ProtectedRoute';
+import Admin from './pages/user/Admin';
+
+import ProtectedRoute from './auth/ProtectedRoute';
 
 import { DataProvider } from './Context';
 
+
+
 const App = () => {
     return (
-        <DataProvider>
-            <Router>
+        <div className='App'>
+                <DataProvider>
+                    <Router>
 
-                <Routes>
+                        <Routes>
 
-                    {/* <Route path='/' element={<Home />} />
-                    <Route path='/home' element={<Home />} />
-                    <Route path="/register" element={<RegisterForm />} />
-                    <Route path="/login" element={<LoginForm />} />
-                     */}
-                    
-                    {/* <Route path='/productshome' element={
-                        <ProtectedRoute>
-                            <ProductList />
-                        </ProtectedRoute>
-                    } /> 
-                    <Route path="/products" element={
-                        <ProtectedRoute>
-                            <Products />
-                        </ProtectedRoute>
-                    } />
-                    <Route path="/cart" element={
-                        <ProtectedRoute>
-                            <Cart />
-                        </ProtectedRoute>
-                    } />
-                    <Route path="/billing" element={
-                        <ProtectedRoute>
-                            <Billing />
-                        </ProtectedRoute>
-                    } /> */}
+                            <Route path='/' element={<Home />} />
+                            <Route path='/home' element={<Home />} />
 
-                    <Route path='*' element={<NotFoundPage />} />
+                            <Route path='*' element={<NotFoundPage />} />
 
-                    {/* 
-                    <Route path='/categorys' element={<Categorys />} /> 
-                    <Route path="/products" element={<Products />} /> */}
+                            <Route path='/login' element={<Authform/>} />
 
-                    <Route path='/' element={<HomeUser />} />
-                    <Route path='/categorys' element={<CategoryList />} /> 
-                    <Route path="/products" element={<ProductList />} />
+                            <Route path='/homeuser' element={<HomeUser />} />
+                            <Route path='/categories' element={<ProtectedRoute>
+                                <CategoryList /></ProtectedRoute>}/>
+                            <Route path="/products" element={<ProtectedRoute>
+                                <ProductList /></ProtectedRoute>}/>
+                            <Route path='/admin' element={<ProtectedRoute>
+                                <Admin /></ProtectedRoute>} />
+                            <Route path='/cart' element={<ProtectedRoute>
+                                <Cart /></ProtectedRoute>} />
+                            <Route path='/billing' element={<ProtectedRoute>
+                                <Billing /></ProtectedRoute>} />
 
-                    <Route path="/categorys/create" element={<CategoryCreate />} />
-                    <Route path="/categorys/update/:id" element={<CategoryUpdate />} />
-                    <Route path="/categorys/delete/:id" element={<CategoryDelete />} />
+                            <Route path="/categories/create" element={<ProtectedRoute>
+                                <CategoryCreate /> </ProtectedRoute>} />
+                            <Route path="/categories/update/:id" element={<ProtectedRoute>
+                                <CategoryUpdate /></ProtectedRoute>} />
+                            <Route path="/categories/delete/:id" element={<ProtectedRoute>
+                                <CategoryDelete /></ProtectedRoute>} />
 
-                    <Route path="/products/create" element={<ProductCreate />} />
-                    <Route path="/products/update/:id" element={<ProductUpdate />} />
-                    <Route path="/products/delete/:id" element={<ProductDelete />} />
-                    
+                            <Route path="/products/create" element={<ProtectedRoute>
+                                <ProductCreate /></ProtectedRoute>} />
+                            <Route path="/products/update/:id" element={<ProtectedRoute>
+                                <ProductUpdate /></ProtectedRoute>} />
+                            <Route path="/products/delete/:id" element={<ProtectedRoute>
+                                <ProductDelete /></ProtectedRoute>} />
 
-                </Routes>
+                        </Routes>
 
-            </Router>
-        </DataProvider>
+                    </Router>
+                </DataProvider>
+
+
+        </div>
     );
 };
 

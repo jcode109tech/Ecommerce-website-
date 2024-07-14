@@ -1,0 +1,87 @@
+/* settings.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+  }
+  
+  .settings-container {
+    padding: 20px;
+  }
+  
+  .settings-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .settings-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .add-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .add-product {
+    margin-right: 100px;
+    border-radius: 10px;
+  }
+  .add-category {
+    margin-left: 200px;
+  }
+  
+  .settings-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.2s;
+  }
+  
+  .settings-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .settings-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .settings-details {
+    padding: 15px;
+  }
+  
+  .settings-details h2 {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+  }
+  
+  .settings-details p {
+    color: #555;
+    margin: 0 0 10px;
+  }
+  
+  .price,
+  .quantity {
+    font-weight: bold;
+  }
+  
+  .settings-details a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .settings-details a:hover {
+    text-decoration: underline;
+  }
+  
