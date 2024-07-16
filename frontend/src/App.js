@@ -14,8 +14,12 @@ import CategoryDelete from './components/CategoryDelete'
 import NotFoundPage from './pages/NotFoundPage';
 
 import Home from './pages/landing/Home';
-import Authform from './auth/Authform';
+import About from './pages/landing/About'
+import MoreAboutUs from './pages/landing/MoreAboutUs'
+import Features from './pages/landing/Features'
+import Contact from './pages/landing/Contact';
 
+import Authform from './auth/Authform';
 
 import CategoryList from './pages/user/CategoryList';
 import ProductList from './pages/user/ProductList';
@@ -41,9 +45,9 @@ const App = () => {
 
                             <Route path='/' element={<Home />} />
                             <Route path='/home' element={<Home />} />
-
-                            <Route path='*' element={<NotFoundPage />} />
-
+                            <Route path='/features' element={<Features/>} />
+                            <Route path='/about' element={<About />} />
+                            <Route path='/contacts' element={<Contact />} />
                             <Route path='/login' element={<Authform/>} />
 
                             <Route path='/homeuser' element={<HomeUser />} />
@@ -72,6 +76,7 @@ const App = () => {
                             <Route path="/products/delete/:id" element={<ProtectedRoute>
                                 <ProductDelete /></ProtectedRoute>} />
 
+                            <Route path='*' element={<NotFoundPage />} />
                         </Routes>
 
                     </Router>

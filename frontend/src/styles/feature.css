@@ -1,0 +1,30 @@
+/* product.css */
+
+.features-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .image-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    flex: 0 0 calc(25% - 20px); /* Adjust width as per your design */
+    max-width: calc(25% - 20px); /* Adjust max-width as per your design */
+    margin-bottom: 20px;
+  }
+  
+  .image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+  }
+  

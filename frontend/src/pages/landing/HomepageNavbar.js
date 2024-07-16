@@ -8,10 +8,10 @@ const HomepageNavbar = () => {
     const guestLinks = (
     <div className='hoverover'>
         <ul>
-            <li><a href='home'>Home</a></li>
-            <li><a href='/features'>Features</a></li>
-            <li><a href='/about'>About</a></li>
-            <li><a href='/moreaboutus'>Contact</a></li>
+            <li><NavLink to='/home'>Home</NavLink></li>
+            <li><NavLink to='/features'>Features</NavLink></li>
+            <li><NavLink to='/about'>About</NavLink></li>
+            <li><NavLink to='/contacts'>Contact</NavLink></li>
             <li><NavLink to="/login">
                 <button className="login-button">Log In / Register</button>
             </NavLink></li> 
@@ -22,7 +22,8 @@ const HomepageNavbar = () => {
     <header id="looknav">
         <nav className="navbar">
           <div id="navlook">
-            <Logo />
+            {/* <Logo /> */}
+            <h3>Calm Cove</h3>
             <div id="redirectpages">
               {guestLinks}
             </div>
