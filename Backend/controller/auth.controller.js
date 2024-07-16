@@ -67,4 +67,6 @@ const loginUser = async (req, res) => {
     }
 }
 
+
+
 module.exports = { register, verifyEmail, loginUser }

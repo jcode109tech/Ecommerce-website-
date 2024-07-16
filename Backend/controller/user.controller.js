@@ -6,8 +6,9 @@ const saltRounds = 10;
 
 // Controller to get all users
 const getAllUsers = async (req, res) => {
+    const query = req.query.search
     try {
-        const allUsers = await userInstance.findAllUser();
+        const allUsers = query ? await userInstance.findAllUser() : await userInstance.findAllUser();
         res.status(200).json(allUsers);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -43,7 +44,7 @@ const userUpdate = async (req, res) => {
     let otp;
     
     if (email) {
-        otp = otpGenerator();
+        otp = await otpGenerator();
         await sendVerificationEmail(email, otp);
     }
     try {
@@ -56,6 +57,13 @@ const userUpdate = async (req, res) => {
             role,
             otp
         };
+
+        Object.keys(details).forEach(key => {
+            if (details[key] === undefined) {
+                delete details[key];
+            }
+        });
+
         const updated = await userInstance.updateOneUser(id, details);
         res.status(201).json(updated);
     } catch (err) {

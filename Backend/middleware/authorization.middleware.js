@@ -31,4 +31,14 @@ const verifyAdmin = (req, res, next) => {
     });
 };
 
-module.exports = { verifyToken, verifyAdmin };
+const verifyTokenAndAdmin = (req, res, next) => {
+    verifyToken(req, res, () => {
+        if (req.user.role === 'Admin' || req.user.id === req.params.id) {
+            next();
+        } else {
+            res.status(403).json({ message: 'Access forbidden: Admins and users only' });
+        }
+    });
+};
+
+module.exports = { verifyToken, verifyAdmin, verifyTokenAndAdmin };

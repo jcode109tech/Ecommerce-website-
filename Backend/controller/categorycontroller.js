@@ -36,10 +36,10 @@ const categoryUpdate = async (req, res) => {
     try {
         const { id } = req.params;
         const { name, description } = req.body;
-        const details = {
-            name,
-            description
-        }
+        let details = {};
+            if (name) details.title = name;
+            if (description) details.description = description;
+
         const updated = await categoryInstance.updateCategory(id, details);
         res.status(201).json(updated);
     } catch (err) {

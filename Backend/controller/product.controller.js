@@ -2,6 +2,7 @@ const productInstance = require('../services/productservice');
 const categoryInstance = require('../services/categoryservice');
 const formidable = require('formidable')
 const uploadFile = require('../utilities/upload.utility')
+const { verifyToken, verifyAdmin } = require('../middleware/authorization.middleware');
 
 const createProduct = async (req, res, next) => {
     const form = formidable({ maxFieldsSize: 400 * 1024 *1024 });
@@ -12,7 +13,9 @@ const createProduct = async (req, res, next) => {
         }
         try {
             const { categoryId, title, description, price, quantity, isPurchased } = fields;
-            if (!categoryId) {
+            const userId = req.user.userId
+            console.log('this is the user', userId)
+            if (!categoryId || !userId) {
                 res.status(400).json({ message: 'please select a category'})
             }
             const uploadedFiles = await uploadFile(files['imgUrl'].filepath, 'intro')
@@ -29,7 +32,8 @@ const createProduct = async (req, res, next) => {
                 price: price,
                 quantity: quantity,
                 isPurchased: isPurchased,
-                imgUrl: imgUrl
+                imgUrl: imgUrl,
+                userId
             }
 
             const newProduct = await productInstance.createProduct(details);
@@ -78,29 +82,30 @@ const productUpdate = async (req, res, next) => {
                 imgUrl = uploadedFiles.url;
             }
 
-            let category;
+            let details = {};
+            if (title) details.title = title;
+            if (description) details.description = description;
+            if (price) details.price = price;
+            if (quantity) details.quantity = quantity;
+            if (typeof isPurchased !== 'undefined') details.isPurchased = isPurchased;
+            if (imgUrl) details.imgUrl = imgUrl;
+
             if (categoryId) {
-                category = await categoryInstance.findOneCategory(categoryId);
-                category = category._id
+                const category = await categoryInstance.findOneCategory(categoryId);
+                if (!category) {
+                    return res.status(400).json({ message: 'Category not found' });
+                }
+                details.categoryId = category._id;
             }
 
-            const details = {
-                title,
-                categoryId: category, // Handle if category is not found
-                description: description,
-                price: price,
-                quantity: quantity,
-                isPurchased: isPurchased,
-                imgUrl: imgUrl
-            };
-
             const updatedProduct = await productInstance.updateProduct(id, details);
-            res.status(200).json(updatedProduct); // Use updatedProduct instead of newProduct
+            res.status(200).json(updatedProduct);
         } catch (err) {
             res.status(500).json({ message: err.message });
         }
     });
 };
+
 
 const deleteProduct = async (req, res) => {
     const { id } = req.params

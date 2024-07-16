@@ -13,7 +13,9 @@ class ProductService {
 
     async findAllProducts() { 
         try {
-            const products = await productModel.find().populate('categoryId'); // Use the field name as a string
+            const products = await productModel.find()
+            .populate('categoryId')
+            .populate('userId')
             return products;
         } catch (err) {
             throw new Error(`Error finding products: ${err.message}`);
@@ -22,7 +24,9 @@ class ProductService {
 
     async findOneProduct(id) {
         try {
-            const oneProduct = await productModel.findOne({ _id: id }).populate('categoryId');
+            const oneProduct = await productModel.findOne({ _id: id })
+            .populate('categoryId')
+            .populate('userId')
             return oneProduct;
         } catch (err) {
             throw new Error(`Error finding product: ${err.message}`);
@@ -40,7 +44,9 @@ class ProductService {
 
     async deleteProduct (id) {
         try {
-            const deleted = await productModel.findOneAndDelete({ _id: id }).populate('categoryId');
+            const deleted = await productModel.findOneAndDelete({ _id: id })
+            .populate('categoryId')
+            .populate('userId')
             return deleted;
         } catch (err) {
             throw new Error(`Error deleting product: ${err.message}`);
