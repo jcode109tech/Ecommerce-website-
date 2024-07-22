@@ -42,34 +42,3 @@ const CategoryList = () => {
 };
 
 export default CategoryList;
-
-
-
-// import React, { useState } from 'react';
-// import { useData } from '../Context';
-
-
-// const CategoryList = () => {
-//     const { categories, api } = useData(); 
-
-//     return (
-//         <>
-            
-//             <div className="products-grid">
-//                 {categories && categories.map((category) => (
-//                     <div key={category._id} className="product-item">
-//                         <img src={category.imgUrl} alt={category.title} />
-//                         <div className="product-details">
-//                             <h2>{category.title}</h2>
-//                             <p>{category.description}</p>
-//                             <p>${category.price}</p>
-//                         </div>
-//                     </div>
-//                 ))}
-//             </div>
-//         </>
-//     );
-// };
-
-// export default CategoryList;
-

@@ -4,29 +4,8 @@ const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
 
-    // const [cartItems, setCartItems] = useState([]);
-
     const Api = "http://localhost:8080";
-
-    // useEffect (() => {
-
-    //     const fetchCarts = async () => {
-    //            try {
-    //                const response = await fetch(`${Api}/api/cart`);
-    //                if (!response.ok) {
-    //                    throw new Error('Network response was not ok');
-    //                }
-    //                const data = await response.json();
-    //                setCartItems(data);
-    //            } catch (error) {
-    //                console.error('Error fetching data:', error)
-    //            }
-    //        };
-
-    //       fetchCarts();
-
-    //     }, [])
-
+ 
     const [user, setUser] = useState(null);
 
     useEffect(() => {
@@ -46,9 +25,17 @@ export const DataProvider = ({ children }) => {
         setUser(null);
     }
 
+    const getToken = () => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            return JSON.parse(storedUser).token;
+        }
+        return null;
+    };
 
-      return (
-         <DataContext.Provider value={{ user, logout, login, Api}}>
+    
+    return (
+         <DataContext.Provider value={{ user, getToken, logout, login, Api}}>
              {children}
          </DataContext.Provider>
      );

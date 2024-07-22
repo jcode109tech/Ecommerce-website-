@@ -20,6 +20,7 @@ import Features from './pages/landing/Features'
 import Contact from './pages/landing/Contact';
 
 import Authform from './auth/Authform';
+import EmailVerification from './auth/EmailVerification';
 
 import CategoryList from './pages/user/CategoryList';
 import ProductList from './pages/user/ProductList';
@@ -49,7 +50,8 @@ const App = () => {
                             <Route path='/about' element={<About />} />
                             <Route path='/contacts' element={<Contact />} />
                             <Route path='/login' element={<Authform/>} />
-
+                            <Route path='/verify' element={<EmailVerification/>} />
+                            
                             <Route path='/homeuser' element={<HomeUser />} />
                             <Route path='/categories' element={<ProtectedRoute>
                                 <CategoryList /></ProtectedRoute>}/>

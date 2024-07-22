@@ -108,7 +108,7 @@ export const Register = (props) => {
             const response = await axios.post(`${Api}/api/auth/register`, formData);
             console.log('User registered:', response.data);
             toast.success('User exists')
-            navigate('/login')
+            navigate('/verify')
         // Redirect or show success message
         } catch (error) {
         console.error('Registration failed:', error.response.data);

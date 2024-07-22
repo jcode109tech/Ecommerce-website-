@@ -8,6 +8,8 @@ import { useData } from '../../Context';
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const { getToken } = useData();
+  const userToken = getToken(); 
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -26,24 +28,30 @@ const ProductList = () => {
 
   const handleAddToCart = async (product) => {
     try {
-      const response = await fetch(`${Api}/cart`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ productId: product._id, userId: 'user1' }),
-      });
+        const response = await fetch(`${Api}/api/carts/create`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${userToken}` // Make sure to include the user's JWT token for authorization
+            },
+            body: JSON.stringify({
+                productId: product._id,
+                quantity: 1, // Assuming you want to add 1 quantity of the product by default
+            }),
+        });
 
-      if (response.ok) {
-        const updatedCartItems = [...cartItems, product];
-        setCartItems(updatedCartItems);
-      } else {
-        console.error('Error adding to cart');
-      }
+        if (response.ok) {
+            const updatedCartItems = [...cartItems, product];
+            setCartItems(updatedCartItems);
+        } else {
+            const errorData = await response.json();
+            console.error('Error adding to cart:', errorData.message);
+        }
     } catch (error) {
-      console.error('Error adding to cart:', error);
+        console.error('Error adding to cart:', error);
     }
-  };
+};
+
 
   return (
     <>

@@ -1,9 +1,10 @@
 import axios from 'axios';
 
+
 const Api = "http://localhost:8080";
 
 const categoryService = {
-  
+
   createCategory: async (data) => {
     try {
       const response = await axios.post(`${Api}/api/categories/create`, data,{
